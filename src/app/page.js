@@ -39,13 +39,13 @@ export default function Home() {
       <div className=" flex jusitfy-center align-center h-auto py-[40px] sm:border-2 sm:border-red-400 md:border-blue-400 lg:border-green-400">
         <div className="p-[24px] rounded-[12px] border-2 self-center bg-[#08252B] mx-auto w-[90%] sm:w-[75%] overflow-hidden border-[#0E464F]">
           <div className="border-b-2 relative flex flex-row flex-wrap justify-between mb-[2rem]  pb-3 border-[#0E464F] text-white">                
-              <h2 className=" text-[24px] font-jeju">
+              <h2 className=" text-[24px] font-jeju text-center">
                   Ticket Selection
                 </h2>
                 <span className="font-roboto text-[1rem]">
                   Step 1/3
                 </span>
-                <span className="absolute -bottom-[.1rem] w-[110px] bg-[#24A0B5] h-[.1rem] left-0"></span>
+                <span className="absolute -bottom-[.1rem] w-[70px] bg-[#24A0B5] h-[.1rem] left-0"></span>
 
               </div>
 

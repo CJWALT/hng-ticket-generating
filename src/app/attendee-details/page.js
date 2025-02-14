@@ -7,7 +7,7 @@ import Button from '../component/button'
 const AttendeeDetails = () => {
     
 
-        // const [photo, setPhoto] = useState(null)
+        const [photo, setPhoto] = useState(null)
         const [name, setName] = useState('')
         const [email, setEmail] = useState('')
         const [subject, setSubject] = useState('')
@@ -15,18 +15,16 @@ const AttendeeDetails = () => {
         const router = useRouter();
 
 
-        // const handlePhotoChange = (e) =>{ 
-        //     e.preventDefault();
-        //         const file = e.target.files[0]
+        const handlePhotoChange = (e) =>{ 
+            e.preventDefault();
+                const file = e.target.files[0]
 
-        //         if(file){
-        //             const reader = new FileReader(); 
-        //             reader.readAsDataURL(file)
-        //             reader.onLoadend = () =>{ 
-        //                 setPhoto(reader.result)
-        //             }
-        //          }
-        // }   
+                if(file){
+                    setPhoto(URL.createObjectURL(file));
+                 }
+
+                 console.log(photo)
+        }   
 
         const validateForm = () => {
             if (!name.trim()) return { valid: false, message: "Name is required" };
@@ -49,7 +47,7 @@ const AttendeeDetails = () => {
                 return;
             }
             const attendeeDetails = { 
-                // photo, 
+                photo, 
                 name, 
                 email, 
                 subject
@@ -63,7 +61,7 @@ const AttendeeDetails = () => {
         }
 
         
-
+console.log(photo)
         
   return (
     <>      
@@ -78,7 +76,7 @@ const AttendeeDetails = () => {
                 <span className="font-[roboto] text-[1rem]">
                   Step 2/3
                 </span>
-                <span className="absolute -bottom-[.1rem] w-[70px] bg-[#24A0B5] h-[.1rem] left-0"></span>
+                <span className="absolute -bottom-[.1rem] w-[150px] bg-[#24A0B5] h-[.1rem] left-0"></span>
               </div>
                 <div>
                     <form>
@@ -90,8 +88,15 @@ const AttendeeDetails = () => {
 
                             
                         <div className='border-2 border-[#24A0B5] rounded-[24px] flex flex-col justify-center h-[200px] w-[80%] mx-auto text-white overflow-hidden'>
-                                <label htmlFor='draganddrop' className='font-normal font-roboto text-[1rem] text-center'>Drag & drop or click to upload</label>
-                                <input type='file' accept='image/*' id='draganddrop' className='hidden' />
+
+                            {photo ? (
+                                <img src={photo}
+                                alt='uploaded preview'
+                                className='w-full h-full object-cover'/>
+                            ) : (
+                            <label htmlFor='draganddrop' className='font-normal font-roboto text-[1rem] text-center'>Drag & drop or click to upload</label>
+                            )}                                
+                                <input type='file' accept='image/*' id='draganddrop' className='hidden' onChange={handlePhotoChange} />
                             </div>
                         </div>
 

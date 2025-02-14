@@ -31,14 +31,10 @@
 
 
 .curved_inward{ 
-  clip-path: polygon(
-    0% 0%,  /* Top-left */
-    75% 0%, /* Top-right */
-    100% 25%, /* Curve inward at top-right */
-    100% 75%, /* Bottom-right */
-    75% 100%, /* Curve inward at bottom-right */
-    25% 100%, /* Bottom-left */
-    0% 75%, /* Curve inward at bottom-left */
-    0% 25%  /* Curve inward at top-left */
-  );
+  background:url('/ticket-bg.svg');
+  background-repeat:no-repeat;
+  background-size: cover;
+  background-position:top;
+  
+
 }
