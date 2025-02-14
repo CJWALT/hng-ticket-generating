@@ -1,4 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Jeju+Myeongjo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alatsi&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Road+Rage&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+
+
+:root {
+  color: rgba(128, 128, 128, 0.98); 
+  background-color: #02191D;
+  background-image: radial-gradient(ellipse 1000px 250px at bottom center, #24A0B533, transparent);
+  background-repeat: no-repeat;
+}
+
+.event-checked{ 
+  background-color: #197686;
+}
+
+.ticket_bg{ 
+  
+    background: radial-gradient(
+        103.64% 57.39% at 14.02% 32.06%,
+        #24A0B533,
+        transparent
+      ),
+      rgba(10, 12, 17, 0.1);
+  }
+
+
+.curved_inward{ 
+  clip-path: polygon(
+    0% 0%,  /* Top-left */
+    75% 0%, /* Top-right */
+    100% 25%, /* Curve inward at top-right */
+    100% 75%, /* Bottom-right */
+    75% 100%, /* Curve inward at bottom-right */
+    25% 100%, /* Bottom-left */
+    0% 75%, /* Curve inward at bottom-left */
+    0% 25%  /* Curve inward at top-left */
+  );
+}

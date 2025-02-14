@@ -12,7 +12,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-      className="bg-[#02191D]"
+
         >
           <Nav/>
           {/* <div className="mx-auto w-[90%]"> */}

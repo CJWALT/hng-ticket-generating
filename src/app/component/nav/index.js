@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 const Nav = () => {
   return (
-    <div className='mx-auto flex flex-row justify-between w-[90%] border-2 border-[#197686] rounded-[12px] py-[12px] px-[16px]'>
+    <div className='mx-auto my-4 flex flex-row justify-between w-[90%] border-2 border-[#197686] rounded-[12px] py-[12px] px-[16px]'>
         <div> 
             <Image src='/logo.png' alt='logo' width={100} height={100}/>
         </div>
