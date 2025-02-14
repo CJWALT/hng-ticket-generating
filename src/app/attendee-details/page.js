@@ -10,20 +10,44 @@ const AttendeeDetails = () => {
         const [photo, setPhoto] = useState(null)
         const [name, setName] = useState('')
         const [email, setEmail] = useState('')
+
+        const [loading, setLoading] = useState(false)
         const [subject, setSubject] = useState('')
 
         const router = useRouter();
 
 
-        const handlePhotoChange = (e) =>{ 
+        const handlePhotoChange = async (e) =>{ 
             e.preventDefault();
                 const file = e.target.files[0]
+                if(!file)   return;
 
-                if(file){
-                    setPhoto(URL.createObjectURL(file));
-                 }
+                setPhoto(URL.createObjectURL(file));
 
-                 console.log(photo)
+                const formData = new FormData(); 
+                formData.append('file', file); 
+
+                formData.append('upload_preset', 'attendeeimage' )
+        
+                setLoading(true);
+
+                try{ 
+                    const res = await fetch('https://api.cloudinary.com/v1_1/diw7yga8q/image/upload',{ 
+                        method:'POST',
+                        body:formData,
+                    });
+
+                    const data = await res.json();
+                    console.log(data)
+                    setPhoto(data.secure_url)
+                }
+                catch(err){ 
+                    console.error('Upload failed:', err)
+                }
+
+                setLoading(false);
+
+
         }   
 
         const validateForm = () => {
@@ -57,7 +81,7 @@ const AttendeeDetails = () => {
 
             router.push('/ready-ticket')
         
-            console.log(localStorage.getItem('attendeeDetails'))
+            
         }
 
         
@@ -129,6 +153,7 @@ console.log(photo)
                         
                         <Button              
                             children='Back'
+                            handleClick={()=>router.push('/')}
                             
                             className='bg-transparent border-2 border-[#24A0B5]'/>
                         </div>

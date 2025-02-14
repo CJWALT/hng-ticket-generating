@@ -52,10 +52,10 @@ export default function Home() {
           <div>
 
               <div className="border-2 border-[#07373F] ticket_bg rounded-[24px] text-white overflow-hidden py-[16px] px-[24px]">
-                <h1 className="font-roadRage text-[48px]">Techember Fest "25</h1>
+                <h1 className="font-roadRage text-[48px] text-center">Techember Fest "25</h1>
                 <p className="text-[1rem] text-center">Join us for an unforgettable experience at: [Event Name]! Secure your spot now. </p>
-                <small className="text-center font-roboto text-[1rem] block mt-[40px]">
-                   [Event Location] <br/> March 15, 2025 | 7:00 PM
+                <ion-icon name="pin-sharp" className='text-red-500'></ion-icon><small className="text-center font-roboto text-[1rem] block mt-[40px]">
+                 [Event Location] <br/> March 15, 2025 | 7:00 PM
                 </small>
 
                 </div>
