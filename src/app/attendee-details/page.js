@@ -51,6 +51,7 @@ const AttendeeDetails = () => {
         }   
 
         const validateForm = () => {
+            if (!photo) return { valid: false, message: "Profile photo is required" };
             if (!name.trim()) return { valid: false, message: "Name is required" };
             if (!email.trim()) return { valid: false, message: "Email is required" };
             if (!/\S+@\S+\.\S+/.test(email)) return { valid: false, message: "Invalid email format" };

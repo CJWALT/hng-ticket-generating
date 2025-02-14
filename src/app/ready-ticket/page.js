@@ -59,7 +59,7 @@ const ReadyTicket = () => {
                             <small className="text-[10px] font-normal"> <ion-icon name="calendar-number-sharp" className='text-red-500'></ion-icon> &nbsp; March 15, 2021 | 7.00pm</small>
                         </div>
                         <div className="flex justify-center my-[.5rem] h-[140px] overflow-hidden">
-                        <Image src={`${attendeeDetails?.photo}`} alt='attendant' width={200} height={200} className="w-[70%] h-auto object-contain rounded-[24px] border-2 border-red"/>
+                        <Image src={attendeeDetails?.photo} alt='attendant' width={200} height={200} className="w-[70%] h-auto object-contain rounded-[24px] border-2 border-red"/>
                         </div>
                         
                         <div className=" rounded-md border-2 border-[#133D44] bg-[#08343C] p-2">
