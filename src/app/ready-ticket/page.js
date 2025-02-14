@@ -4,10 +4,13 @@ import Image from "next/image"
 
 
 import {useEffect, useState} from 'react'
+import {useRouter} from 'next/navigation'
 import Button from "../component/button"
 
 
 const ReadyTicket = () => {
+
+    const router = useRouter();
 
     const [ticketDetails, setTicketDetails] = useState(null)
     const [attendeeDetails, setAttendeeDetails] = useState(null)
@@ -103,6 +106,7 @@ const ReadyTicket = () => {
                             children='Download Ticket'
                             className='bg-[#24A0B5]'/>
                             <Button children='Book AnotherTicket'
+                            handleClick={()=> router.push('/')}
                             className='bg-transparent border-2 border-[#24A0B5]'/>
 
                         </div>

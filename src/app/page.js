@@ -37,7 +37,7 @@ export default function Home() {
       
 
       <div className=" flex jusitfy-center align-center h-auto py-[40px] sm:border-2 sm:border-red-400 md:border-blue-400 lg:border-green-400">
-        <div className="p-[24px] rounded-[12px] border-2 self-center bg-[#08252B] mx-auto w-[90%] sm:w-[75%] overflow-hidden border-[#0E464F]">
+        <div className="p-[24px] md:w-[78%] md:max-w-[570px] rounded-[12px] border-2 self-center bg-[#08252B] mx-auto w-[90%] sm:w-[75%] overflow-hidden border-[#0E464F]">
           <div className="border-b-2 relative flex flex-row flex-wrap justify-between mb-[2rem]  pb-3 border-[#0E464F] text-white">                
               <h2 className=" text-[24px] font-jeju text-center">
                   Ticket Selection
@@ -52,11 +52,16 @@ export default function Home() {
           <div>
 
               <div className="border-2 border-[#07373F] ticket_bg rounded-[24px] text-white overflow-hidden py-[16px] px-[24px]">
-                <h1 className="font-roadRage text-[48px] text-center">Techember Fest "25</h1>
-                <p className="text-[1rem] text-center">Join us for an unforgettable experience at: [Event Name]! Secure your spot now. </p>
-                <ion-icon name="pin-sharp" className='text-red-500'></ion-icon><small className="text-center font-roboto text-[1rem] block mt-[40px]">
-                 [Event Location] <br/> March 15, 2025 | 7:00 PM
-                </small>
+                <h1 className="font-roadRage text-[48px] text-center sm:text-[62px]">Techember Fest "25</h1>
+                <div className="flex justify-center w-full"><p className="text-[1rem] text-center md:w-[300px] mb-6">Join us for an unforgettable experience at: [Event Name]! Secure your spot now. </p></div>
+                
+                
+              
+                    <small className="text-center font-roboto text-[1rem] block">
+                    <ion-icon name="pin-sharp" className='text-red-500'></ion-icon>
+                  [Event Location] <br/> March 15, 2025 | 7:00 PM
+                  </small>
+               
 
                 </div>
 
@@ -66,9 +71,9 @@ export default function Home() {
 
                 <h6 className="mb-2 font-normal text-[1rem]" >Select Ticket Type: </h6>
               
-                    <div className="border-2 flex flex-col gap-[24px] border-[#07373F] font-[Roboto] p-[16px] rounded-[24px] bg-[#052228]">
+                    <div className="border-2 sm:flex-row sm:flex-wrap flex flex-col gap-[24px] border-[#07373F] font-[Roboto] p-[16px] rounded-[24px] bg-[#052228]">
                       
-                        <label htmlFor="free" className={`p-[12px] relative border-2 border-[#197686] hover:bg-[#197686] rounded-[12px] h-[110px] block ${selectTicket === 'free' ?  'event-checked': 'border-2 border-[#197686]'  }`}>
+                        <label htmlFor="free" className={`p-[12px] sm:w-[180px] md:w-[145px] relative border-2 border-[#197686] hover:bg-[#197686] rounded-[12px] h-[110px] block ${selectTicket === 'free' ?  'event-checked': 'border-2 border-[#197686]'  }`}>
                           <input type="radio" className=" opacity-0 absolute top-0 left-0" id="free" name="ticket" value='free' onChange={(e)=>{setSelectTicket(e.target.value)}}/>
                           <span className="block font-semibold text-[24px] ">Free</span>
                            <small className="block font-normal text-[1rem]">Regular Access <br/> 20/25</small>  
@@ -77,7 +82,7 @@ export default function Home() {
                       
 
                       
-                        <label htmlFor="vip" className={`p-[12px] relative border-2 border-[#197686] hover:bg-[#197686] rounded-[12px] h-[110px] block ${selectTicket === 'vip' ?  'event-checked': 'border-2 border-[#197686]' }`}>
+                        <label htmlFor="vip" className={`p-[12px] sm:w-[180px] md:w-[145px] relative border-2 border-[#197686] hover:bg-[#197686] rounded-[12px] h-[110px] block ${selectTicket === 'vip' ?  'event-checked': 'border-2 border-[#197686]' }`}>
                         <input type="radio" id="vip" className=" opacity-0 absolute top-0 left-0" name="ticket" value='vip' onChange={(e)=>{setSelectTicket(e.target.value)}}/>
                          <span className="block font-semibold text-[24px]">$150</span>
                           <small className="block font-normal text-[1rem]">VIP ACCESS  <br/>20/25</small>
@@ -85,7 +90,7 @@ export default function Home() {
                         
                       
                       
-                        <label htmlFor="vvip" className={`p-[12px] relative border-2 border-[#197686] hover:bg-[#197686] rounded-[12px] h-[110px] block ${selectTicket === 'vvip' ? 'event-checked' :  'border-2 border-[#197686]'}`}>
+                        <label htmlFor="vvip" className={`p-[12px] sm:w-[180px] md:w-[145px] relative border-2 border-[#197686] hover:bg-[#197686] rounded-[12px] h-[110px] block ${selectTicket === 'vvip' ? 'event-checked' :  'border-2 border-[#197686]'}`}>
                         <input type="radio" className=" opacity-0 absolute top-0 left-0" id="vvip" name="ticket" value='vvip' onChange={(e)=>{setSelectTicket(e.target.value)}}/>
                           <span className="block font-semibold text-[24px]">$150</span>
                           <small className="block font-normal text-[1rem]">VVIP Access <br/> 20/25</small>
@@ -121,16 +126,16 @@ export default function Home() {
                 
               </div>
           
-            <div className="flex flex-col gap-4 text-white justify-center">
+            <div className="flex flex-col md:flex-row gap-4 text-white justify-center">
 
               <Button
               
               children='Next'
-              className='bg-[#24A0B5]'/>
+              className='bg-[#24A0B5] '/>
               <Button
               
               children='Cancel'
-              className='bg-transparent border-2 border-[#24A0B5]'/>
+              className='bg-transparent border-2 border-[#24A0B5] '/>
             </div>
 
             </form>

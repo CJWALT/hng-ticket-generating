@@ -93,9 +93,9 @@ console.log(photo)
 
         <div className='flex jusitfy-center align-center h-auto py-[40px] sm:border-2 sm:border-red-400 md:border-blue-400 lg:border-green-400'>
 
-            <div className="p-[24px] text-white rounded-[12px] border-2 self-center bg-[#08252B] mx-auto w-[90%] sm:w-[75%] overflow-hidden border-[#0E464F]">
+            <div className="p-[24px] md:w-[60%] md:max-w-[600px] text-white rounded-[12px] border-2 self-center bg-[#08252B] mx-auto w-[90%] sm:w-[75%] overflow-hidden border-[#0E464F]">
             <div className="border-b-2 mb-[2rem]  pb-3 border-[#0E464F] relative text-white">                
-              <h2 className=" text-[24px]">
+              <h2 className=" font-jeju md:text-[32px] text-[24px]">
                   Attendee Details
                 </h2>
                 <span className="font-[roboto] text-[1rem]">
@@ -112,7 +112,7 @@ console.log(photo)
                         <div>
 
                             
-                        <div className='border-2 border-[#24A0B5] rounded-[24px] flex flex-col justify-center h-[200px] w-[80%] mx-auto text-white overflow-hidden'>
+                        <div className='border-2 border-[#24A0B5] bg-[#24A0B5] rounded-[24px] sm:w-[50%] sm:max-w-[240px] flex flex-col justify-center h-[200px] w-[80%] mx-auto text-white overflow-hidden'>
 
                             {photo ? (
                                 <img src={photo}
@@ -146,7 +146,7 @@ console.log(photo)
                             </label>
                             <textarea rows={3} columns={30} value={subject} placeholder='textarea' onChange={(e)=>setSubject(e.target.value)} className='mt-2 h-[127px] p-[12px] w-full rounded-[14px] bg-transparent border-2 border-[#07373F] resize-none' required/>
                         </div>
-                        <div className='gap-4 flex flex-col'>
+                        <div className='gap-4 flex justify-center md:flex-row flex-col'>
                             <Button 
                             className='bg-[#24A0B5]'
                             handleClick={handleSubmit}
